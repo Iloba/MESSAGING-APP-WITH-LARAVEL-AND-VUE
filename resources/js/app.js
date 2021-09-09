@@ -9,6 +9,11 @@ require('./bootstrap');
 window.Vue = require('vue').default;
 import VueRouter from "vue-router";
 import {routes} from "./routes";
+
+
+
+  
+
 Vue.use(VueRouter);
 
 
@@ -40,6 +45,7 @@ Vue.component('register-user', require('./components/auth/register.vue').default
 
 const app = new Vue({
     el: '#app',
-    router: router
+    router: router,
+  
 });
 

@@ -2533,7 +2533,7 @@ fieldset:disabled a.btn {
 }
 .btn-info:hover {
   color: #fff;
-  background-color: #1A73E8
+  background-color: #1A73E8;
   border-color: #3f9ae5;
 }
 .btn-info:focus, .btn-info.focus {

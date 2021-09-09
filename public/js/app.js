@@ -2149,7 +2149,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      form: {
+        username: '',
+        email: '',
+        phone: '',
+        password: '',
+        password_confirmation: ''
+      }
+    };
+  },
+  methods: {
+    RegisterUser: function RegisterUser() {
+      axios.post("/api/register").then(function (response) {
+        console.log(response);
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -37922,36 +37953,186 @@ var render = function() {
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-6 mx-auto" }, [
             _c("div", { attrs: { id: "login-form" } }, [
-              _c("form", [
-                _vm._m(0),
-                _vm._v(" "),
-                _vm._m(1),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "d-flex justify-content-between mb-5" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "create-account",
-                        attrs: { to: { name: "LoginUser" } }
-                      },
-                      [_vm._v("Sign In")]
-                    ),
+              _c(
+                "form",
+                {
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.RegisterUser.apply(null, arguments)
+                    }
+                  }
+                },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "mb-5" }, [
+                    _c("div", { staticClass: "mb-4" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.username,
+                            expression: "form.username"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "username",
+                          placeholder: "Username"
+                        },
+                        domProps: { value: _vm.form.username },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "username", $event.target.value)
+                          }
+                        }
+                      })
+                    ]),
                     _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-info text-light",
-                        attrs: { type: "submit", href: "" }
-                      },
-                      [_vm._v("Register")]
-                    )
-                  ],
-                  1
-                )
-              ])
+                    _c("div", { staticClass: "mb-4" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.email,
+                            expression: "form.email"
+                          }
+                        ],
+                        staticClass: "form-control mb-4",
+                        attrs: {
+                          type: "email",
+                          name: "email",
+                          placeholder: "Email Address"
+                        },
+                        domProps: { value: _vm.form.email },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "email", $event.target.value)
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mb-4" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.phone,
+                            expression: "form.phone"
+                          }
+                        ],
+                        staticClass: "form-control mb-4",
+                        attrs: {
+                          type: "number",
+                          name: "phone",
+                          placeholder: "Phone Number"
+                        },
+                        domProps: { value: _vm.form.phone },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "phone", $event.target.value)
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mb-4" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.password,
+                            expression: "form.password"
+                          }
+                        ],
+                        staticClass: "form-control mb-4",
+                        attrs: { type: "password", placeholder: "Password" },
+                        domProps: { value: _vm.form.password },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "password", $event.target.value)
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mb-4" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.password_confirmation,
+                            expression: "form.password_confirmation"
+                          }
+                        ],
+                        staticClass: "form-control mb-4",
+                        attrs: {
+                          type: "password_confirmation",
+                          placeholder: "Confirm Password"
+                        },
+                        domProps: { value: _vm.form.password_confirmation },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.form,
+                              "password_confirmation",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "d-flex justify-content-between mb-5" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "create-account",
+                          attrs: { to: { name: "LoginUser" } }
+                        },
+                        [_vm._v("Sign In")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-info text-light",
+                          attrs: { type: "submit", href: "" }
+                        },
+                        [_vm._v("Register")]
+                      )
+                    ],
+                    1
+                  )
+                ]
+              )
             ])
           ])
         ])
@@ -37971,40 +38152,6 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("h3", { staticClass: "text-center mb-5" }, [_vm._v("Create Account")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mb-5" }, [
-      _c("input", {
-        staticClass: "form-control mb-4",
-        attrs: { type: "text", name: "username", placeholder: "Username" }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control mb-4",
-        attrs: { type: "text", name: "email", placeholder: "Email Address" }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control mb-4",
-        attrs: { type: "number", name: "phone", placeholder: "Phone Number" }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control mb-4",
-        attrs: { type: "password", placeholder: "Password" }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control mb-4",
-        attrs: {
-          type: "password_confirmation",
-          placeholder: "Confirm Password"
-        }
-      })
     ])
   }
 ]
