@@ -13,7 +13,7 @@ class RegisterController extends Controller
             'username' => 'required',
             'email' => 'required',
             'phone' => 'required',
-            'password' => ['required', 'confirmed']
+            'password' => ['required', 'string', 'min:8'],
         ]);
 
         return response()->json('Hello');

@@ -2177,6 +2177,8 @@ __webpack_require__.r(__webpack_exports__);
         'password': this.passcode
       }).then(function (response) {
         console.log(response);
+      })["catch"](function (error) {
+        console.log(console.error);
       });
     }
   }
