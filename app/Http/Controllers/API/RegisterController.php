@@ -7,7 +7,15 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
-    public function register(){
+    public function register(Request $request){
+
+        $request->validate([
+            'username' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'password' => ['required', 'confirmed']
+        ]);
+
         return response()->json('Hello');
     }
 }

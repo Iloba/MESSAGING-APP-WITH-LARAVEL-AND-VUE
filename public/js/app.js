@@ -2157,10 +2157,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2168,14 +2164,18 @@ __webpack_require__.r(__webpack_exports__);
         username: '',
         email: '',
         phone: '',
-        password: '',
-        password_confirmation: ''
+        passcode: ''
       }
     };
   },
   methods: {
     RegisterUser: function RegisterUser() {
-      axios.post("/api/register").then(function (response) {
+      axios.post("/api/register", {
+        'username': this.form.username,
+        'email': this.form.email,
+        'phone': this.form.phone,
+        'password': this.passcode
+      }).then(function (response) {
         console.log(response);
       });
     }
@@ -38057,19 +38057,23 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.form.password,
-                            expression: "form.password"
+                            value: _vm.form.passcode,
+                            expression: "form.passcode"
                           }
                         ],
                         staticClass: "form-control mb-4",
-                        attrs: { type: "password", placeholder: "Password" },
-                        domProps: { value: _vm.form.password },
+                        attrs: {
+                          type: "password",
+                          name: "password",
+                          placeholder: "Password"
+                        },
+                        domProps: { value: _vm.form.passcode },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(_vm.form, "password", $event.target.value)
+                            _vm.$set(_vm.form, "passcode", $event.target.value)
                           }
                         }
                       })
@@ -38087,7 +38091,8 @@ var render = function() {
                         ],
                         staticClass: "form-control mb-4",
                         attrs: {
-                          type: "password_confirmation",
+                          type: "password",
+                          name: "password_confirmation",
                           placeholder: "Confirm Password"
                         },
                         domProps: { value: _vm.form.password_confirmation },

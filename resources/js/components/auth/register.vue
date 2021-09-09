@@ -23,19 +23,15 @@
                                          <input type="number" name="phone" class="form-control mb-4" placeholder="Phone Number" v-model="form.phone">
                                    </div>
                                    <div class="mb-4">
-                                    <input type="password" class="form-control mb-4" placeholder="Password" v-model="form.password">
-
+                                     <input type="password" name="password" class="form-control mb-4" placeholder="Password" v-model="form.passcode">
                                    </div>
                                    <div class="mb-4">
-
-                                    <input type="password_confirmation" class="form-control mb-4" placeholder="Confirm Password" v-model="form.password_confirmation">
+                                        <input type="password" name="password_confirmation" class="form-control mb-4" placeholder="Confirm Password" v-model="form.password_confirmation">
                                    </div>
                                 </div>
                                 <div class="d-flex justify-content-between mb-5">
                                     <router-link :to="{name: 'LoginUser'}" class="create-account">Sign In</router-link>
-                                    
                                     <button type="submit" class="btn btn-info text-light" href="">Register</button>
-                                    
                                 </div>
                             </form>    
                         </div>
@@ -54,14 +50,18 @@ export default {
                 username: '',
                 email: '',
                 phone: '',
-                password: '',
-                password_confirmation: '',
+                passcode: '', 
             }
         }
     },
     methods:{
         RegisterUser(){
-            axios.post("/api/register")
+            axios.post("/api/register", {
+                'username': this.form.username,
+                'email': this.form.email,
+                'phone': this.form.phone,
+                'password': this.passcode,
+            })
             .then(response =>{
                 console.log(response);
             })
