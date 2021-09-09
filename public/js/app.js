@@ -2071,6 +2071,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -2086,6 +2113,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2205,13 +2262,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [{
-  path: '/register',
-  name: 'RegisterUser',
-  component: _components_auth_register__WEBPACK_IMPORTED_MODULE_1__["default"]
-}, {
   path: '/login',
   name: 'LoginUser',
   component: _components_auth_login__WEBPACK_IMPORTED_MODULE_0__["default"]
+}, {
+  path: '/register',
+  name: 'RegisterUser',
+  component: _components_auth_register__WEBPACK_IMPORTED_MODULE_1__["default"]
 }];
 
 /***/ }),
@@ -37759,9 +37816,84 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n      login\n")])
+  return _c("div", [
+    _c("div", { staticClass: "mb-5" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6 mx-auto" }, [
+            _c("div", { attrs: { id: "login-form" } }, [
+              _c("form", [
+                _vm._m(0),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "d-flex justify-content-between mb-5" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "create-account",
+                        attrs: { to: { name: "RegisterUser" } }
+                      },
+                      [_vm._v("Create Account")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-info text-light",
+                        attrs: { href: "" }
+                      },
+                      [_vm._v("Login")]
+                    )
+                  ],
+                  1
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mt-4 mb-4" }, [
+      _c("h3", { staticClass: "text-center text-success mb-4" }, [
+        _c("span", { staticClass: "text-danger" }, [_vm._v("Mess")]),
+        _vm._v("enger")
+      ]),
+      _vm._v(" "),
+      _c("h3", { staticClass: "text-center mb-3" }, [_vm._v("Sign in")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "text-center mb-5" }, [
+        _vm._v("Use your messenger account")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-5" }, [
+      _c("input", {
+        staticClass: "form-control mb-4",
+        attrs: { type: "text", name: "email", placeholder: "Email Address" }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control mb-4",
+        attrs: { type: "password", name: "password", placeholder: "Password" }
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -37784,22 +37916,98 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "router-link",
-        {
-          staticClass: "btn btn-info btn-sm",
-          attrs: { to: { name: "LoginUser" } }
-        },
-        [_vm._v("Login")]
-      )
-    ],
-    1
-  )
+  return _c("div", [
+    _c("div", { staticClass: "mb-5" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6 mx-auto" }, [
+            _c("div", { attrs: { id: "login-form" } }, [
+              _c("form", [
+                _vm._m(0),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "d-flex justify-content-between mb-5" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "create-account",
+                        attrs: { to: { name: "LoginUser" } }
+                      },
+                      [_vm._v("Sign In")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-info text-light",
+                        attrs: { type: "submit", href: "" }
+                      },
+                      [_vm._v("Register")]
+                    )
+                  ],
+                  1
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mt-4 mb-4" }, [
+      _c("h3", { staticClass: "text-center text-success mb-4" }, [
+        _c("span", { staticClass: "text-danger" }, [_vm._v("Mess")]),
+        _vm._v("enger")
+      ]),
+      _vm._v(" "),
+      _c("h3", { staticClass: "text-center mb-5" }, [_vm._v("Create Account")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-5" }, [
+      _c("input", {
+        staticClass: "form-control mb-4",
+        attrs: { type: "text", name: "username", placeholder: "Username" }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control mb-4",
+        attrs: { type: "text", name: "email", placeholder: "Email Address" }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control mb-4",
+        attrs: { type: "number", name: "phone", placeholder: "Phone Number" }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control mb-4",
+        attrs: { type: "password", placeholder: "Password" }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control mb-4",
+        attrs: {
+          type: "password_confirmation",
+          placeholder: "Confirm Password"
+        }
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 
