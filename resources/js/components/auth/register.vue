@@ -23,10 +23,10 @@
                                          <input type="number" name="phone" class="form-control mb-4" placeholder="Phone Number" v-model="form.phone">
                                    </div>
                                    <div class="mb-4">
-                                     <input type="password" name="password" class="form-control mb-4" placeholder="Password" v-model="form.passcode">
+                                     <input type="password" name="password" class="form-control mb-4" placeholder="Password" v-model="form.pass_word" required>
                                    </div>
                                    <div class="mb-4">
-                                        <input type="password" name="password_confirmation" class="form-control mb-4" placeholder="Confirm Password" v-model="form.password_confirmation">
+                                        <input type="password" name="password_confirmation" class="form-control mb-4" placeholder="Confirm Password" v-model="form.password_confirmation" required>
                                    </div>
                                 </div>
                                 <div class="d-flex justify-content-between mb-5">
@@ -50,9 +50,13 @@ export default {
                 username: '',
                 email: '',
                 phone: '',
-                passcode: '', 
+                pass_word: '',
+                password_confirmation
             }
-        }
+        };
+    },
+    created(){
+         RegisterUser()
     },
     methods:{
         RegisterUser(){
@@ -60,12 +64,13 @@ export default {
                 'username': this.form.username,
                 'email': this.form.email,
                 'phone': this.form.phone,
-                'password': this.passcode,
+                'password': this.form.pass_word,
+                'password_confirmation': this.form.password_confirmation
             })
             .then(response =>{
                 console.log(response);
             }).catch(error => {
-                console.log(console.error);
+                console.log(error);
             });
         } 
     }
