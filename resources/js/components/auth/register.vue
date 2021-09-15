@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="d-flex justify-content-between mb-5">
                                     <router-link :to="{name: 'LoginUser'}" class="create-account">Sign In</router-link>
-                                    <button type="submit" class="btn btn-info text-light" href="">Register</button>
+                                    <button type="submit" class="btn btn-info text-light">Register</button>
                                 </div>
                             </form>    
                         </div>

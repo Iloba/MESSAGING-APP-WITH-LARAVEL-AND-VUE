@@ -2107,9 +2107,6 @@ __webpack_require__.r(__webpack_exports__);
       }
     };
   },
-  created: function created() {
-    LoginUser();
-  },
   methods: {
     LoginUser: function LoginUser() {
       axios.post("/api/login", {
@@ -38209,7 +38206,7 @@ var render = function() {
                         "button",
                         {
                           staticClass: "btn btn-info text-light",
-                          attrs: { type: "submit", href: "" }
+                          attrs: { type: "submit" }
                         },
                         [_vm._v("Register")]
                       )

@@ -41,9 +41,6 @@ export default {
             }
         };
     },
-    created(){
-         LoginUser()
-    },
     methods:{
         LoginUser(){
             axios.post("/api/login", {
