@@ -15,6 +15,6 @@ class RegisterController extends Controller
     }
 
     public function login(Request $request){
-
+        return response()->json('Hello');
     }
 }
