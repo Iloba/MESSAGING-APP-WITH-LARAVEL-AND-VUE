@@ -2098,7 +2098,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      form: {
+        email: '',
+        password: ''
+      }
+    };
+  },
+  created: function created() {
+    LoginUser();
+  },
+  methods: {
+    LoginUser: function LoginUser() {
+      axios.post("/api/login", {
+        'email': this.form.email,
+        'password': this.form.password
+      }).then(function (response) {
+        console.log(response);
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -2164,9 +2188,13 @@ __webpack_require__.r(__webpack_exports__);
         username: '',
         email: '',
         phone: '',
-        passcode: ''
+        pass_word: '',
+        password_confirmation: password_confirmation
       }
     };
+  },
+  created: function created() {
+    RegisterUser();
   },
   methods: {
     RegisterUser: function RegisterUser() {
@@ -2174,11 +2202,12 @@ __webpack_require__.r(__webpack_exports__);
         'username': this.form.username,
         'email': this.form.email,
         'phone': this.form.phone,
-        'password': this.passcode
+        'password': this.form.pass_word,
+        'password_confirmation': this.form.password_confirmation
       }).then(function (response) {
         console.log(response);
       })["catch"](function (error) {
-        console.log(console.error);
+        console.log(error);
       });
     }
   }
@@ -37855,36 +37884,99 @@ var render = function() {
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-6 mx-auto" }, [
             _c("div", { attrs: { id: "login-form" } }, [
-              _c("form", [
-                _vm._m(0),
-                _vm._v(" "),
-                _vm._m(1),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "d-flex justify-content-between mb-5" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "create-account",
-                        attrs: { to: { name: "RegisterUser" } }
+              _c(
+                "form",
+                {
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.LoginUser.apply(null, arguments)
+                    }
+                  }
+                },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "mb-5" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.email,
+                          expression: "form.email"
+                        }
+                      ],
+                      staticClass: "form-control mb-4",
+                      attrs: {
+                        type: "text",
+                        name: "email",
+                        placeholder: "Email Address"
                       },
-                      [_vm._v("Create Account")]
-                    ),
+                      domProps: { value: _vm.form.email },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "email", $event.target.value)
+                        }
+                      }
+                    }),
                     _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-info text-light",
-                        attrs: { href: "" }
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.password,
+                          expression: "form.password"
+                        }
+                      ],
+                      staticClass: "form-control mb-4",
+                      attrs: {
+                        type: "password",
+                        name: "password",
+                        placeholder: "Password"
                       },
-                      [_vm._v("Login")]
-                    )
-                  ],
-                  1
-                )
-              ])
+                      domProps: { value: _vm.form.password },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "password", $event.target.value)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "d-flex justify-content-between mb-5" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "create-account",
+                          attrs: { to: { name: "RegisterUser" } }
+                        },
+                        [_vm._v("Create Account")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-info text-light",
+                          attrs: { type: "submit" }
+                        },
+                        [_vm._v("Login")]
+                      )
+                    ],
+                    1
+                  )
+                ]
+              )
             ])
           ])
         ])
@@ -37908,22 +38000,6 @@ var staticRenderFns = [
       _c("p", { staticClass: "text-center mb-5" }, [
         _vm._v("Use your messenger account")
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mb-5" }, [
-      _c("input", {
-        staticClass: "form-control mb-4",
-        attrs: { type: "text", name: "email", placeholder: "Email Address" }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control mb-4",
-        attrs: { type: "password", name: "password", placeholder: "Password" }
-      })
     ])
   }
 ]
@@ -38059,23 +38135,24 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.form.passcode,
-                            expression: "form.passcode"
+                            value: _vm.form.pass_word,
+                            expression: "form.pass_word"
                           }
                         ],
                         staticClass: "form-control mb-4",
                         attrs: {
                           type: "password",
                           name: "password",
-                          placeholder: "Password"
+                          placeholder: "Password",
+                          required: ""
                         },
-                        domProps: { value: _vm.form.passcode },
+                        domProps: { value: _vm.form.pass_word },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(_vm.form, "passcode", $event.target.value)
+                            _vm.$set(_vm.form, "pass_word", $event.target.value)
                           }
                         }
                       })
@@ -38095,7 +38172,8 @@ var render = function() {
                         attrs: {
                           type: "password",
                           name: "password_confirmation",
-                          placeholder: "Confirm Password"
+                          placeholder: "Confirm Password",
+                          required: ""
                         },
                         domProps: { value: _vm.form.password_confirmation },
                         on: {

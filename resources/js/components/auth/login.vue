@@ -13,13 +13,13 @@
                                     <p class="text-center mb-5">Use your messenger account</p>
                                 </div>
                                 <div class="mb-5">
-                                    <input type="text" name="email" class="form-control mb-4" placeholder="Email Address" v-model="email">
-                                    <input type="password" name="password" class="form-control mb-4" placeholder="Password" v-model="password">
+                                    <input type="text" name="email" class="form-control mb-4" placeholder="Email Address" v-model="form.email">
+                                    <input type="password" name="password" class="form-control mb-4" placeholder="Password" v-model="form.password">
                                 </div>
                                 <div class="d-flex justify-content-between mb-5">
                                     <router-link :to="{name: 'RegisterUser'}" class="create-account">Create Account</router-link>
                                   
-                                    <button class="btn btn-info text-light" href="">Login</button>
+                                    <button class="btn btn-info text-light"  type="submit">Login</button>
                                     
                                 </div>
                             </form>    
@@ -36,10 +36,8 @@ export default {
     data(){
         return{
             form:{
-               
                 email: '',
                 password: '',
-            
             }
         };
     },
@@ -49,9 +47,8 @@ export default {
     methods:{
         LoginUser(){
             axios.post("/api/login", {
-         
                 'email': this.form.email,
-                'password': this.form.pass_word
+                'password': this.form.password
             })
             .then(response =>{
                 console.log(response);

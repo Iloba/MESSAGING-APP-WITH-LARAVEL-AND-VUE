@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
@@ -33,7 +33,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Poppins", sans-serif;
+  --font-family-sans-serif: "Nunito", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -56,7 +56,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -1968,8 +1968,8 @@ pre code {
   color: #495057;
   background-color: #fff;
   background-clip: padding-box;
-  border: 2px solid #1A73E8;
-  border-radius: 7px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1990,18 +1990,18 @@ pre code {
   background-color: #fff;
   border-color: #a1cbef;
   outline: 0;
-  /* box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25); */
+  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 .form-control::-moz-placeholder {
-  color: #1A73E8;
+  color: #6c757d;
   opacity: 1;
 }
 .form-control:-ms-input-placeholder {
-  color: #1A73E8;
+  color: #6c757d;
   opacity: 1;
 }
 .form-control::placeholder {
-  color: #1A73E8;
+  color: #6c757d;
   opacity: 1;
 }
 .form-control:disabled, .form-control[readonly] {
@@ -2528,12 +2528,12 @@ fieldset:disabled a.btn {
 
 .btn-info {
   color: #212529;
-  background-color: #1A73E8;
-  border-color: #1A73E8;
+  background-color: #6cb2eb;
+  border-color: #6cb2eb;
 }
 .btn-info:hover {
   color: #fff;
-  background-color: #1A73E8;
+  background-color: #4aa0e6;
   border-color: #3f9ae5;
 }
 .btn-info:focus, .btn-info.focus {
@@ -5585,7 +5585,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -5687,7 +5687,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -10001,24 +10001,4 @@ h3 {
     color: inherit;
     border-color: #dee2e6;
   }
-}
-
-/* My Style */
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-#body{
-  background: #fff;
-}
-#login-form{
-  border: 2px solid #F5F6F8;
-  padding: 33px;
-  border-radius: 6px;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075)
-}
-.create-account:hover{
-  text-decoration: none;
 }
