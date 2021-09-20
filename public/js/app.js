@@ -2107,6 +2107,9 @@ __webpack_require__.r(__webpack_exports__);
       }
     };
   },
+  created: function created() {
+    LoginUser();
+  },
   methods: {
     LoginUser: function LoginUser() {
       axios.post("/api/login", {
