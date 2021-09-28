@@ -1,13 +1,13 @@
 <template>
-<div>
+<div class="index-page">
     Index Page
 </div>
 </template>
 
 <script>
-    export default {
-       
-    }
+export default {
+    
+}
 </script>
 
 <style>

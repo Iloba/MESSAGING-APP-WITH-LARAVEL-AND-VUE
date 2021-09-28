@@ -16,7 +16,7 @@
     <body id="body">
         <div id="app">
             <div class="mb-3">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+                <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
                   <router-link :to="{name: 'Index'}" class="navbar-brand">{{env('app_name')}}</router-link>
                    
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
