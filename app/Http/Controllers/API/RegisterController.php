@@ -4,14 +4,22 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {
-    public function register(RegisterRequest $request){
+    public function register(Request $request){
 
+        $request->validate([
+            'username' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'password' => 'required'
+        ]);
+
+        
+      
        
-        return response()->json('Hello');
+        return response()->json($request->all());
     }
 
     public function login(Request $request){

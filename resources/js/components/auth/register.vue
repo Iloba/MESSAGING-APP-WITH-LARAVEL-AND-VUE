@@ -23,15 +23,15 @@
                                          <input type="number"  class="form-control mb-4" placeholder="Phone Number" v-model="phone">
                                    </div>
                                    <div class="mb-4">
-                                     <input type="password"  class="form-control mb-4" placeholder="Password" v-model="password" required>
+                                     <input type="password"  class="form-control mb-4" placeholder="Password" v-model="password" >
                                    </div>
                                    <div class="mb-4">
-                                        <input type="password"  class="form-control mb-4" placeholder="Confirm Password" v-model="password_confirmation" required>
+                                        <input type="password"  class="form-control mb-4" placeholder="Confirm Password" v-model="password_confirmation" >
                                    </div>
                                 </div>
                                 <div class="d-flex justify-content-between mb-5">
                                     <router-link :to="{name: 'LoginUser'}" class="create-account">Sign In</router-link>
-                                    <button @click="RegisterUser()" type="submit" class="btn btn-info text-light">Register</button>
+                                    <button  type="submit" class="btn btn-info text-light">Register</button>
                                 </div>
                             </form>    
                         </div>
@@ -50,14 +50,23 @@ export default {
            email: '',
            phone: '',
            password: '',
-           password_confirmation: ''
+           password_confirmation: '',
 
-        };
+        }
     },
-   
     methods:{
         RegisterUser(){
-           
+           axios.post('/api/register', {
+               username: this.username,
+               email: this.email,
+               phone: this.phone,
+               password: this.password,
+               password_confirmation: this.password_confirmation
+           }).then(res => {
+               console.log(res.data);
+           }).catch(error =>{
+               console.log(error);
+           })
         } 
     }
 }
